@@ -46,9 +46,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txv.setText(Integer.toString(counter));
     }
 
+    private void minusOne() {
+        counter--;
+        txv.setText(Integer.toString(counter));
+    }
+
     @Override
     public void onClick(View view) {
-        plusOne();
+        switch(view.getId()) {
+            case R.id.number:
+                minusOne();
+                break;
+            case R.id.plusOne:
+                plusOne();
+        }
     }
 
     @Override
